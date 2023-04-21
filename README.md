@@ -19,31 +19,29 @@ Our project is for MetaCrafters final assessment i make a ethereum that will min
 
 
         contract metacrafters{
-                string public TokenName = "Fundsal";
-                string public TokenAbbrv = "Fnds";
-                uint public TotalSupply;
-                       
 
-                       mapping (address => uint) public Balances; 
+                     // public variables here
+                string public TokenName = "Anime Token";
+                string public TokenAbbrv = "ATT";
+                uint public TotalSupply = 0;
 
-                    function Minting (address Address, uint Value)public{
+                       // mapping variable here 
+                 mapping (address => uint) public Balances; 
+
+                      // minting variable here
+                  function Minting (address Address, uint Value)public{
                             TotalSupply += Value;
                             Balances [Address] += Value;
-        
-
-                    }    
-
-                    function Burning (address Address, uint Value)public{
-                           while(Balances[Address] >= Value){
+                    }
+                      
+                      // burning variable here
+                  function Burning (address Address, uint Value)public{
+                           if(Balances[Address] >= Value){
                             TotalSupply -= Value;
-                            Balances [Address] -= Value;
-                           break;
-                           }
+                            Balances [Address] -= Value;}
+                   } 
 
-                                
-                    }       
-
-        }
+        } 
 ```
 
 ## Help
